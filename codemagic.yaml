@@ -1,0 +1,22 @@
+workflows:
+  android-workflow:
+    name: Medicine App APK
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      android: latest
+    scripts:
+      - name: Create Android folder
+        script: |
+          flutter create --platforms android .
+      
+      - name: Get dependencies
+        script: |
+          flutter pub get
+      
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
