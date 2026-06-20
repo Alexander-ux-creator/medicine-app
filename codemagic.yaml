@@ -2,9 +2,9 @@ workflows:
   android-workflow:
     name: Medicine App APK
     max_build_duration: 30
+    instance_type: mac_mini_m2
     environment:
       flutter: stable
-      android: latest
     scripts:
       - name: Create Android folder
         script: |
